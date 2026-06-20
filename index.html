@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucas Bruno — Desenvolvedor de ferramentas web</title>
+<meta name="description" content="Lucas Bruno é desenvolvedor independente, cria ferramentas web e utilitários voltados para a comunidade gamer e criadores de conteúdo no Brasil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1117;
+    --bg-raised:#151b23;
+    --border:#262d38;
+    --text:#e6edf3;
+    --text-dim:#8b949e;
+    --accent:#5fd9a4;
+    --accent-dim:#2a4a3c;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .mono{font-family:'Space Mono',monospace;}
+
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:80px 24px 60px;
+  }
+
+  .prompt-line{
+    font-family:'Space Mono',monospace;
+    font-size:14px;
+    color:var(--text-dim);
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .cursor{
+    display:inline-block;
+    width:8px;
+    height:16px;
+    background:var(--accent);
+    animation:blink 1.1s steps(2) infinite;
+  }
+  @keyframes blink{50%{opacity:0;}}
+
+  h1{
+    font-family:'Space Mono',monospace;
+    font-size:36px;
+    font-weight:700;
+    line-height:1.3;
+    letter-spacing:-0.5px;
+    margin-bottom:18px;
+  }
+  h1 .accent{color:var(--accent);}
+
+  .lead{
+    font-size:17px;
+    color:var(--text-dim);
+    max-width:540px;
+    margin-bottom:14px;
+  }
+
+  .codepoint{
+    display:inline-block;
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    color:var(--accent);
+    background:var(--accent-dim);
+    padding:2px 8px;
+    border-radius:4px;
+    letter-spacing:0.5px;
+    margin-top:8px;
+  }
+
+  .section{
+    margin-top:60px;
+  }
+  .section-label{
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    color:var(--text-dim);
+    text-transform:lowercase;
+    letter-spacing:1px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .section-label::after{
+    content:'';
+    flex:1;
+    height:1px;
+    background:var(--border);
+  }
+
+  .about-text{
+    color:var(--text-dim);
+    font-size:15px;
+    max-width:560px;
+  }
+  .about-text p{margin-bottom:14px;}
+
+  .skills-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:18px;
+  }
+  .skill-pill{
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    color:var(--text-dim);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:5px 11px;
+  }
+
+  .focus-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .focus-item{
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px 20px;
+    background:var(--bg-raised);
+  }
+  .focus-item .focus-title{
+    font-weight:600;
+    font-size:15px;
+    margin-bottom:6px;
+  }
+  .focus-item .focus-desc{
+    color:var(--text-dim);
+    font-size:14px;
+  }
+
+  .social-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+  .social-item{
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:16px 18px;
+    background:var(--bg-raised);
+  }
+  .social-item .platform{
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    color:var(--text-dim);
+    display:block;
+    margin-bottom:4px;
+  }
+  .social-item a{
+    font-size:14px;
+    font-weight:500;
+    color:var(--text);
+  }
+  .social-item a:hover{color:var(--accent);}
+
+  footer{
+    margin-top:70px;
+    padding-top:24px;
+    border-top:1px solid var(--border);
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    color:var(--text-dim);
+  }
+
+  @media (max-width:480px){
+    .wrap{padding:48px 18px 40px;}
+    h1{font-size:28px;}
+    .social-grid{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .cursor{animation:none;opacity:1;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="prompt-line">
+    <span>visitante@portfolio:~$</span>
+    <span class="cursor" aria-hidden="true"></span>
+  </div>
+
+  <h1>Lucas Bruno<br><span class="accent">desenvolvedor independente</span> de ferramentas web.</h1>
+
+  <p class="lead">
+    Construo utilitários e pequenas ferramentas web focadas em resolver problemas
+    reais de quem usa redes sociais e plataformas de jogos no dia a dia.
+  </p>
+
+  <span class="codepoint">U+4C75 LUCAS</span>
+
+  <div class="section">
+    <div class="section-label">sobre</div>
+    <div class="about-text">
+      <p>
+        Sou desenvolvedor brasileiro e trabalho de forma independente criando ferramentas
+        web simples e diretas — geradores, conversores e utilitários pequenos que resolvem
+        uma necessidade específica sem complicação.
+      </p>
+      <p>
+        Tenho interesse particular em comunidades de jogos e redes sociais, onde costumo
+        identificar pequenos atritos do dia a dia que podem ser resolvidos com uma ferramenta
+        bem feita e rápida de usar.
+      </p>
+    </div>
+    <div class="skills-row">
+      <span class="skill-pill mono">HTML / CSS / JS</span>
+      <span class="skill-pill mono">WordPress</span>
+      <span class="skill-pill mono">SEO técnico</span>
+      <span class="skill-pill mono">Unicode &amp; encoding</span>
+      <span class="skill-pill mono">UI simples</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">no que trabalho</div>
+    <div class="focus-list">
+      <div class="focus-item">
+        <div class="focus-title">Ferramentas para redes sociais e jogos</div>
+        <div class="focus-desc">Pequenos utilitários web que ajudam usuários a personalizar perfis, nicknames e textos em diferentes plataformas.</div>
+      </div>
+      <div class="focus-item">
+        <div class="focus-title">Conteúdo educativo em vídeo</div>
+        <div class="focus-desc">Tutoriais curtos explicando como usar caracteres especiais e truques simples de personalização online.</div>
+      </div>
+      <div class="focus-item">
+        <div class="focus-title">SEO e performance de sites pequenos</div>
+        <div class="focus-desc">Ajustes técnicos em sites independentes para melhorar indexação, velocidade e experiência do usuário.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">redes</div>
+    <div class="social-grid">
+      <div class="social-item">
+        <span class="platform mono">twitter / x</span>
+        <a href="https://x.com/LucasBrunoDEV" target="_blank" rel="noopener">@LucasBrunoDEV</a>
+      </div>
+      <div class="social-item">
+        <span class="platform mono">instagram</span>
+        <a href="https://www.instagram.com/lucasbrunodeveloper/" target="_blank" rel="noopener">@lucasbrunodeveloper</a>
+      </div>
+      <div class="social-item">
+        <span class="platform mono">youtube</span>
+        <a href="https://www.youtube.com/@espacoinvisivel-s5u" target="_blank" rel="noopener">@espacoinvisivel-s5u</a>
+      </div>
+      <div class="social-item">
+        <span class="platform mono">facebook</span>
+        <a href="https://www.facebook.com/espacoinvisivelbr" target="_blank" rel="noopener">espacoinvisivelbr</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    lucas bruno · desenvolvedor independente · brasil
+  </footer>
+
+</div>
+
+</body>
+</html>
